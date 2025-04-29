@@ -41,6 +41,21 @@ pipeline {
         }
       }
     }
+
+    stage('Deploy to EC2') {
+      steps {
+        sshagent(['ec2-ssh-creds']) {
+          sh """
+            ssh -o StrictHostKeyChecking=no ec2-user@${EC2_HOST} '
+              docker login -u ssborde26 -p $DOCKER_PASS &&
+              docker pull ssborde26/springboot-html:${BUILD_NUMBER} &&
+              docker rm -f springboot-app || true &&
+              docker run -d --name springboot-app -p 8080:8080 \
+                ssborde26/ssborde26/springboot-html:${BUILD_NUMBER}'
+          """
+        }
+      }
+    }
   }
 
   post {
