@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringBootJPAEmployeeHTML" />
+        <module name="SpringBootCRUDHTML1" />
+        <module name="springbootcrudhtml1-main" />
+        <module name="SpringBootJpaHTMLEmp" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringBootCRUDHTML1" options="-parameters" />
+      <module name="SpringBootJPAEmployeeHTML" options="-parameters" />
+      <module name="SpringBootJpaHTMLEmp" options="-parameters" />
+      <module name="springbootcrudhtml1-main" options="-parameters" />
+    </option>
+  </component>
+</project>
